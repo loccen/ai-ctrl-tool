@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.loccen.aictrltool.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.loccen.aictrltool.MyBundle
 
 class MyApplicationService {
 
