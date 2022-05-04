@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.loccen.aictrltool</id>
-    <name>ai-ctrl-tool</name>
+    <name>Ai-Ctrl-Tool</name>
     <vendor>loccen</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,10 +9,17 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.loccen.aictrltool.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.loccen.aictrltool.services.MyProjectService"/>
+        <toolWindow factoryClass="com.huawei.aictrltool.toolwindow.RemoteToolWindow" id="Remote Build"
+                    icon="AllIcons.Graph.Layout" anchor="left" secondary="false" />
     </extensions>
 
     <applicationListeners>
         <listener class="com.github.loccen.aictrltool.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="TestAction" class="com.huawei.aictrltool.action.TestAction" text="Test" description="Test">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

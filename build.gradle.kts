@@ -21,7 +21,17 @@ version = properties("pluginVersion")
 
 // Configure project's dependencies
 repositories {
+    maven { url = uri("https://maven.aliyun.com/repository/public/") }
     mavenCentral()
+}
+
+dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
+    testImplementation("junit:junit:4.13.2")
+    implementation("org.slf4j:slf4j-api:1.7.36")
+    implementation("ch.qos.logback:logback-core:1.2.11")
+    implementation("ch.qos.logback:logback-classic:1.2.11")
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
